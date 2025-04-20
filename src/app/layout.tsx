@@ -1,15 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
 import { marckScript, cormorantInfant, alegreya } from '@/components/ui/fonts';
-import Header from '@/components/ui/header';
+import Header from '@/components/shared/header';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,7 +17,12 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body
-        className={`${cormorantInfant.variable} ${alegreya.variable} ${marckScript.variable} antialiased bg-background`}
+        className={cn(
+          'antialiased bg-background',
+          cormorantInfant.variable,
+          alegreya.variable,
+          marckScript.variable
+        )}
       >
         <Header />
         {children}
