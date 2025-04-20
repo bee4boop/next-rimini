@@ -3,6 +3,7 @@ import './globals.css';
 import { marckScript, cormorantInfant, alegreya } from '@/components/ui/fonts';
 import Header from '@/components/shared/header';
 import { cn } from '@/lib/utils';
+import { LocationStoreProvider } from '@/providers/location-store-provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,10 +25,12 @@ export default function RootLayout({
           marckScript.variable
         )}
       >
-        <main>
-          <Header />
-          {children}
-        </main>
+        <LocationStoreProvider>
+          <main>
+            <Header />
+            {children}
+          </main>
+        </LocationStoreProvider>
       </body>
     </html>
   );
