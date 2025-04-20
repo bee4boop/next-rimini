@@ -24,8 +24,10 @@ export default function RootLayout({
           marckScript.variable
         )}
       >
-        <Header />
-        {children}
+        <main>
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
