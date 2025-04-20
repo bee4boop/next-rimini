@@ -2,6 +2,7 @@ import { MapPinIcon, Pizza, ShoppingBag, UserIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Container from './container';
+import LocationButton from './location-button';
 
 export default function Header() {
   return (
@@ -19,9 +20,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <div>
-          <MapPinIcon />
-        </div>
+        <LocationButton />
 
         <nav className='flex items-center gap-1'>
           <div className='flex items-center justify-end gap-2'>
